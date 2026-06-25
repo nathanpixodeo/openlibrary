@@ -367,6 +367,7 @@ class AmazonCreatorsAPI:
         country: str = "US",
         throttling: float = 0.9,
         proxy_url: str = "",
+        proxy_creds: str = "",
     ) -> None:
         """
         :param str credential_id: Creators API key / credential ID (OAuth 2.0)
@@ -379,6 +380,7 @@ class AmazonCreatorsAPI:
             AmazonAPI).  The library's internal throttle is disabled so this class
             is the sole source of rate-limiting.
         :param str proxy_url: HTTP proxy URL for environments without direct internet access
+        :param str proxy_creds: Proxy credentials as ``user:password`` (percent-encoded if needed)
         """
         self.tag = tag
         self.throttling = throttling

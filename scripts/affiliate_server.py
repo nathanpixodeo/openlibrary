@@ -42,11 +42,11 @@ from datetime import datetime
 from enum import Enum
 from typing import Any, Final
 
+import infogami
 import requests
 import web
-
-import infogami
 from infogami import config
+
 from openlibrary.config import load_config as openlibrary_load_config
 from openlibrary.core import cache, stats
 from openlibrary.core.imports import Batch, ImportItem
@@ -670,6 +670,7 @@ def load_config(configfile):
             version=creators_version,
             throttling=0.9,
             proxy_url=http_proxy_url,
+            proxy_creds=http_proxy_creds,
         )
         logger.info("AmazonCreatorsAPI Initialized")
     else:
